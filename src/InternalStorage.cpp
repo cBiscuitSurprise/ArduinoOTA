@@ -36,6 +36,7 @@ InternalStorageClass::InternalStorageClass() :
   _writeAddress = nullptr;
 }
 
+#ifdef ARDUINO_OTA_DEBUG_PRINT_ENABLED
 void InternalStorageClass::debugPrint() {
   Serial.print("SKETCH_START_ADDRESS ");
   Serial.println(SKETCH_START_ADDRESS);
@@ -48,6 +49,7 @@ void InternalStorageClass::debugPrint() {
   Serial.print("STORAGE_START_ADDRESS ");
   Serial.println(STORAGE_START_ADDRESS);
 }
+#endif
 
 extern "C" {
   // these functions must be in RAM (.data) and NOT inlined

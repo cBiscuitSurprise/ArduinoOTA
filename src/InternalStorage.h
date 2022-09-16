@@ -38,7 +38,9 @@ public:
   virtual void apply();
   virtual long maxSize();
 
+#ifdef ARDUINO_OTA_DEBUG_PRINT_ENABLED
   void debugPrint();
+#endif
 
 private:
   const uint32_t MAX_PARTIONED_SKETCH_SIZE, STORAGE_START_ADDRESS;
